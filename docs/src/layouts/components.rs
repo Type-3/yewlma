@@ -39,9 +39,9 @@ impl Component for ComponentsLayout {
             <aside class="menu mt-3">
               <p class="menu-label">{"Components"}</p>
               <ul class="menu-list">
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Components(ComponentsRoutes::DropDown)>{"DropDowns"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Components(ComponentsRoutes::BreadCrumbs)>{"BreadCrumbs"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Components(ComponentsRoutes::Pagination)>{"Pagination"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::DropDown))>{"DropDowns"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::BreadCrumbs))>{"BreadCrumbs"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::Pagination))>{"Pagination"}</RouterAnchor<AppRoutes>></li>
               </ul>
             </aside>
             </Column>

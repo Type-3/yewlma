@@ -4,6 +4,15 @@ use yewlma::classes::Color;
 
 #[derive(Debug, PartialEq, Clone, Switch, BreadCrumbs)]
 pub enum AppRoutes {
+    #[to = "/docs{*:rest}"]
+    #[breadcrumbs]
+    Docs(DocsRoutes),
+    #[to = "/"]
+    Index,
+}
+
+#[derive(Debug, PartialEq, Clone, Switch, BreadCrumbs)]
+pub enum DocsRoutes {
     #[to = "/elements{*:rest}"]
     #[breadcrumbs]
     Elements(ElementsRoutes),
@@ -13,8 +22,6 @@ pub enum AppRoutes {
     #[to = "/forms{*:rest}"]
     #[breadcrumbs]
     Forms(FormsRoutes),
-    #[to = "/"]
-    Index,
 }
 
 #[derive(Debug, PartialEq, Clone, Switch,  BreadCrumbs)]

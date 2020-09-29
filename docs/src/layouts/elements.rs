@@ -40,13 +40,13 @@ impl Component for ElementsLayout {
             <aside class="menu mt-3">
               <p class="menu-label">{"Elements"}</p>
               <ul class="menu-list">
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Elements(ElementsRoutes::Button)>{"Button"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Elements(ElementsRoutes::Buttons)>{"Buttons"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Elements(ElementsRoutes::Tag)>{"Tag"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Elements(ElementsRoutes::Tags)>{"Tags"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Elements(ElementsRoutes::Icons)>{"Icons"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Elements(ElementsRoutes::Delete)>{"Delete"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Elements(ElementsRoutes::Notifications)>{"Notifications"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Button))>{"Button"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Buttons))>{"Buttons"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Tag))>{"Tag"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Tags))>{"Tags"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Icons))>{"Icons"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Delete))>{"Delete"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Notifications))>{"Notifications"}</RouterAnchor<AppRoutes>></li>
               </ul>
             </aside>
             </Column>

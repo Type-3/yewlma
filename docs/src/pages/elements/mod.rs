@@ -42,17 +42,17 @@ impl Component for ElementsIndex {
               <div class="tile is-vertical is-8">
                 <div class="tile">
                   <div class="tile is-parent is-vertical">
-                    <RouterAnchor<AppRoutes> classes="tile is-child notification is-primary" route=AppRoutes::Elements(ElementsRoutes::Delete)>
+                    <RouterAnchor<AppRoutes> classes="tile is-child notification is-primary" route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Delete))>
                       <p class="title">{"Delete"}</p>
                       <p class="subtitle">{"Delete button"}</p>
                     </RouterAnchor<AppRoutes>>
-                    <RouterAnchor<AppRoutes> classes="tile is-child notification is-warning" route=AppRoutes::Elements(ElementsRoutes::Icons)>
+                    <RouterAnchor<AppRoutes> classes="tile is-child notification is-warning" route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Icons))>
                       <p class="title">{"Icons"}</p>
                       <p class="subtitle">{"Display font icons"}</p>
                     </RouterAnchor<AppRoutes>>
                   </div>
                   <div class="tile is-parent">
-                    <RouterAnchor<AppRoutes> classes="tile is-child notification is-info" route=AppRoutes::Elements(ElementsRoutes::Tags)>
+                    <RouterAnchor<AppRoutes> classes="tile is-child notification is-info" route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Tags))>
                       <p class="title">{"Tags"}</p>
                       <p class="subtitle">{"Informational Tags"}</p>
                       <figure class="image is-4by3">
@@ -62,7 +62,7 @@ impl Component for ElementsIndex {
                   </div>
                 </div>
                 <div class="tile is-parent">
-                  <RouterAnchor<AppRoutes> classes="tile is-child notification is-light" route=AppRoutes::Elements(ElementsRoutes::Notifications)>
+                  <RouterAnchor<AppRoutes> classes="tile is-child notification is-light" route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Notifications))>
                     <p class="title">{"Notifications"}</p>
                     <p class="subtitle">{"Display important information"}</p>
                     <div class="content">
@@ -72,7 +72,7 @@ impl Component for ElementsIndex {
                 </div>
               </div>
               <div class="tile is-parent">
-                <RouterAnchor<AppRoutes> classes="tile is-child notification is-success" route=AppRoutes::Elements(ElementsRoutes::Buttons)>
+                <RouterAnchor<AppRoutes> classes="tile is-child notification is-success" route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Buttons))>
                   <div class="content">
                     <p class="title">{"Buttons"}</p>
                     <p class="subtitle">{"The classic button element"}</p>

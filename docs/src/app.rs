@@ -1,8 +1,6 @@
-use crate::components::DemoNavBar;
 use crate::pages::*;
 use crate::routes::*;
 use crate::layouts::*;
-use yewlma::prelude::*;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -27,20 +25,14 @@ impl Component for App {
     fn view(&self) -> Html {
         html! {
             <div>
-            <DemoNavBar />
-            <Toaster />
-            <Container>
-                <Router<AppRoutes>
-                    render = Router::render(|switch| {
-                        match switch {
-                            AppRoutes::Index => html! { <IndexPage />},
-                            AppRoutes::Components(route) => html! { <ComponentsLayout route=route /> },
-                            AppRoutes::Elements(route) => html ! { <ElementsLayout route=route /> },
-                            AppRoutes::Forms(route) => html! { <FormsLayout route=route  /> }
-                        }
-                    })
-                />
-            </Container>
+            <Router<AppRoutes>
+            render = Router::render(|switch| {
+                match switch {
+                    AppRoutes::Index => html! { <IndexPage />},
+                    AppRoutes::Docs(route) => html! { <DocumentationLayout route=route /> }
+                }
+            })
+            />
             </div>
         }
     }

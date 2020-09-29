@@ -39,9 +39,9 @@ impl Component for FormsLayout {
             <aside class="menu mt-3">
               <p class="menu-label">{"Forms"}</p>
               <ul class="menu-list">
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Forms(FormsRoutes::Input)>{"Input"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Forms(FormsRoutes::TextArea)>{"TextArea"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Forms(FormsRoutes::CheckBox)>{"CheckBox"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::Input))>{"Input"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::TextArea))>{"TextArea"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::CheckBox))>{"CheckBox"}</RouterAnchor<AppRoutes>></li>
               </ul>
             </aside>
             </Column>

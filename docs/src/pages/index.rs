@@ -1,5 +1,7 @@
 use yew::prelude::*;
-
+use yewlma::prelude::*;
+use yew_router::components::RouterAnchor;
+use crate::routes::*;
 pub struct IndexPage;
 
 impl Component for IndexPage {
@@ -20,7 +22,48 @@ impl Component for IndexPage {
 
     fn view(&self) -> Html {
         html! {
-
+            <section class="hero is-primary is-bold is-fullheight">
+              <div class="hero-head">
+                <nav class="navbar">
+                  <div class="container">
+                    <div class="navbar-brand">
+                      <span class="title navbar-item">{"Yewlma"}</span>
+                      <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </div>
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                      <div class="navbar-end">
+                        <RouterAnchor<AppRoutes> classes="navbar-item is-active" route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Index))>
+                          {"Elements"}
+                        </RouterAnchor<AppRoutes>>
+                        <RouterAnchor<AppRoutes> classes="navbar-item" route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::Index))>
+                           {"Components"}
+                        </RouterAnchor<AppRoutes>>
+                        <RouterAnchor<AppRoutes> classes="navbar-item" route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::Index))>
+                        {"Forms"}
+                        </RouterAnchor<AppRoutes>>
+                        <a  href="https://github.com/Type-3/yewlma" class="navbar-item">
+                            <Icon name="fa fa-github" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+              <div class="hero-body">
+                <div class="container has-text-centered">
+                  <h1 class="title">
+                    {"Bulma Components for Yew"}
+                  </h1>
+                  <h2 class="subtitle">
+                    {"Subtitle"}
+                  </h2>
+                </div>
+              </div>
+            </section>
         }
     }
 }

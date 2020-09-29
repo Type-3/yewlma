@@ -3,7 +3,6 @@ use std::marker::PhantomData;
 use yew::prelude::*;
 use yewtil::{Pure, PureComponent};
 use yew_property_info::HasPropertyInfo;
-use yewlma::prelude::*;
 
 
 pub type PropsTable<T> = Pure<PurePropsTable<T>>;
@@ -17,7 +16,7 @@ pub struct PurePropsTable<T: HasPropertyInfo + Clone + PartialEq + 'static> {
 impl <T: HasPropertyInfo + Clone + PartialEq + 'static>PureComponent for PurePropsTable<T> {
     fn render(&self) -> Html {
         html! {
-            <Table striped=true fullwidth=true>
+            <table class="table is-stripped is-fullwidth">
               <thead>
                 <th>{"Property"}</th><th>{"Required"}</th><th>{"Type"}</th><th>{"Default"}</th><th>{"Description"}</th>
               </thead>
@@ -33,7 +32,7 @@ impl <T: HasPropertyInfo + Clone + PartialEq + 'static>PureComponent for PurePro
                   })
               }
               </tbody>
-            </Table>
+            </table>
         }
     }
 }

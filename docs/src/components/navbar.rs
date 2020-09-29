@@ -1,8 +1,8 @@
-use yewlma::prelude::*;
 use yew::prelude::*;
+use yewlma::prelude::*;
+use yew_router::components::RouterAnchor;
 
 use crate::routes::*;
-use yewlma::components::navbar::*;
 
 pub struct DemoNavBar ;
 
@@ -24,30 +24,34 @@ impl Component for DemoNavBar {
 
     fn view(&self) -> Html {
         html! {
-            <NavBar shadow=true color=Color::Primary>
-              <Brand<AppRoutes> route=AppRoutes::Index>
-                <h1 class="navbar-item title has-text-white">{"Yewlma"}</h1>
-              </Brand<AppRoutes>>
-
-              <div id="demoNavBar" class="navbar-menu">
-                <div class="navbar-end">
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <Link>{"Documentation"}</Link>
-                  <div class="navbar-dropdown">
-                    <Item<AppRoutes> route=AppRoutes::Elements(ElementsRoutes::Index)>
+            <nav class="navbar">
+              <div class="container">
+                <div class="navbar-brand">
+                  <RouterAnchor<AppRoutes> classes="title navbar-item" route=AppRoutes::Index>{"Yewlma"}</RouterAnchor<AppRoutes>>
+                  <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                </div>
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                  <div class="navbar-end">
+                    <RouterAnchor<AppRoutes> classes="navbar-item is-active" route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Index))>
                       {"Elements"}
-                    </Item<AppRoutes>>
-                    <Item<AppRoutes> route=AppRoutes::Components(ComponentsRoutes::Index)>
-                      {"Components"}
-                    </Item<AppRoutes>>
-                    <Item<AppRoutes> route=AppRoutes::Forms(FormsRoutes::Index)>
-                      {"Forms"}
-                    </Item<AppRoutes>>
+                    </RouterAnchor<AppRoutes>>
+                    <RouterAnchor<AppRoutes> classes="navbar-item" route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::Index))>
+                       {"Components"}
+                    </RouterAnchor<AppRoutes>>
+                    <RouterAnchor<AppRoutes> classes="navbar-item" route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::Index))>
+                    {"Forms"}
+                    </RouterAnchor<AppRoutes>>
+                    <a  href="https://github.com/Type-3/yewlma" class="navbar-item">
+                        <Icon name="fa fa-github" />
+                    </a>
                   </div>
                 </div>
-                </div>
               </div>
-            </NavBar>
+            </nav>
         }
     }
 }
