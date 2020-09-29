@@ -1,0 +1,22 @@
+[tasks.build-docs]
+disable = true
+workspace = false
+script = [
+    "wasm-pack build docs --target web --out-dir pkg",
+    "rollup ./docs/main.js --format iife --file ./docs/pkg/bundle.js"
+]
+
+[tasks.serve-docs]
+disable = true
+workspace = false
+script = [
+    "basic-http-server docs"
+]
+
+[tasks.docs]
+disable = true
+workspace = false
+dependencies = [
+    "build-docs",
+    "serve-docs"
+]

@@ -1,0 +1,6 @@
+[alias]
+"docs:dev" = ["make", "docs"]
+"docs:build" = ["make", "build-docs"]
+"docs:serve" = ["make", "serve-docs"]
+"sass:dev" = ["make", "build-sass"]
+"sass:prod" = ["make", "build-sass-production"]

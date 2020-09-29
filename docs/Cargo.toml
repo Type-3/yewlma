@@ -1,0 +1,17 @@
+[package]
+name = "demo"
+version = "0.1.0"
+authors = ["Bytebuddha <pmg41494@protonmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "^0.2"
+yewlma = { path = "../" }
+yew-route-breadcrumbs = "0.1.2"
+yew-property-info = { git = "https://github.com/Type-3/yew-property-info" }
+yew = { git = "https://github.com/yewstack/yew" }
+yewtil = { git = "https://github.com/yewstack/yew" }
+yew-router = { git = "https://github.com/yewstack/yew" }

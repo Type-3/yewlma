@@ -1,0 +1,24 @@
+[package]
+name = "yewlma"
+version = "0.1.0"
+authors = ["Bytebuddha <pmg41494@protonmail.com>"]
+edition = "2018"
+
+[workspace]
+members = [
+    "docs"
+]
+
+[features]
+default = ["full"]
+full = ["yew", "yewtil", "yew-router", "paginator", "yew-route-breadcrumbs"]
+
+[dependencies]
+serde = "1.0.115"
+derive_more = "0.99.9"
+paginator = { optional = true, version = "0.2.0" }
+yew-property-info = { git = "https://github.com/Type-3/yew-property-info" }
+yew-route-breadcrumbs = { optional = true, version = "0.1.2" }
+yew = { optional = true, git = "https://github.com/yewstack/yew" }
+yewtil = { optional = true, git = "https://github.com/yewstack/yew", features = ["pure"] }
+yew-router = { optional = true, git = "https://github.com/yewstack/yew" }
