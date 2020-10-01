@@ -1,8 +1,9 @@
-use crate::components::{DemoContainer, PropsTable};
 use yew::prelude::*;
+use yewlma::prelude::*;
 use yew_route_breadcrumbs::Crumb;
 use yewlma::components::BreadCrumbsProps;
-use yewlma::prelude::*;
+
+use crate::components::{DemoContainer, PropertyInformation};
 
 pub struct BreadCrumbsPage {
     link: ComponentLink<Self>,
@@ -64,14 +65,7 @@ impl Component for BreadCrumbsPage {
                     </DemoContainer>
                  </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<BreadCrumbsProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<BreadCrumbsProps> />
             </Container>
         }
     }

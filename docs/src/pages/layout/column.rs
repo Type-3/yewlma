@@ -1,7 +1,7 @@
-use crate::components::{DemoContainer, PropsTable};
 use yew::prelude::*;
 use yewlma::layout::ColumnProps;
 use yewlma::prelude::*;
+use crate::components::PropertyInformation;
 
 pub struct ColumnPage {
     _link: ComponentLink<Self>,
@@ -28,14 +28,7 @@ impl Component for ColumnPage {
     fn view(&self) -> Html {
         html! {
             <Container>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<ColumnProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<ColumnProps> />
             </Container>
         }
     }

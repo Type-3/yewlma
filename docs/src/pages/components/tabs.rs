@@ -1,7 +1,7 @@
-use crate::components::{DemoContainer, PropsTable};
 use yew::prelude::*;
-use yewlma::components::TabsProps;
 use yewlma::prelude::*;
+use yewlma::components::TabsProps;
+use crate::components::{DemoContainer, PropertyInformation};
 
 pub struct TabsPage {
     _link: ComponentLink<Self>,
@@ -50,14 +50,7 @@ impl Component for TabsPage {
                     </DemoContainer>
                  </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<TabsProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<TabsProps> />
             </Container>
         }
     }

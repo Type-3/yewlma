@@ -1,4 +1,4 @@
-use crate::components::{DemoContainer, PropsTable};
+use crate::components::PropertyInformation;
 use yew::prelude::*;
 use yewlma::layout::ContainerProps;
 use yewlma::prelude::*;
@@ -28,14 +28,7 @@ impl Component for ContainerPage {
     fn view(&self) -> Html {
         html! {
             <Container>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<ContainerProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+                <PropertyInformation<ContainerProps> />
             </Container>
         }
     }

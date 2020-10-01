@@ -1,7 +1,8 @@
-use crate::components::{DemoContainer, PropsTable};
 use yew::prelude::*;
-use yewlma::components::DropDownMenuProps;
 use yewlma::prelude::*;
+use yewlma::components::DropDownMenuProps;
+
+use crate::components::{PropertyInformation, DemoContainer};
 
 pub struct DropDownPage {
     link: ComponentLink<Self>,
@@ -99,14 +100,7 @@ impl Component for DropDownPage {
                     </DemoContainer>
                  </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<DropDownMenuProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<DropDownMenuProps> />
             </Container>
         }
     }

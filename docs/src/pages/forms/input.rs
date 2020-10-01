@@ -1,4 +1,4 @@
-use crate::components::{DemoContainer, PropsTable};
+use crate::components::{DemoContainer, PropertyInformation};
 use yew::prelude::*;
 use yewlma::forms::InputFieldProps;
 use yewlma::prelude::*;
@@ -111,14 +111,7 @@ impl Component for InputPage {
                     </DemoContainer>
                  </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<InputFieldProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<InputFieldProps> />
             </Container>
         }
     }

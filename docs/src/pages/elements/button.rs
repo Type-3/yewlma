@@ -1,4 +1,4 @@
-use crate::components::{DemoContainer, PropsTable};
+use crate::components::{DemoContainer, PropertyInformation};
 use crate::routes::AppRoutes;
 use yew::prelude::*;
 use yewlma::prelude::*;
@@ -180,14 +180,7 @@ impl Component for ButtonPage {
                   </DemoContainer>
                 </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<ButtonProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<ButtonProps> />
             </Container>
         }
     }

@@ -2,7 +2,7 @@ use yew::prelude::*;
 use yewlma::elements::IconProps;
 use yewlma::prelude::*;
 
-use crate::components::{DemoContainer, PropsTable};
+use crate::components::{DemoContainer, PropertyInformation};
 
 pub struct IconsPage {
     link: ComponentLink<Self>,
@@ -104,14 +104,7 @@ impl Component for IconsPage {
                     </DemoContainer>
                  </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<IconProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<IconProps> />
             </Container>
         }
     }

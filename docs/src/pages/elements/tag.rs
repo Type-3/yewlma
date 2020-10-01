@@ -1,4 +1,4 @@
-use crate::components::{DemoContainer, PropsTable};
+use crate::components::{DemoContainer, PropertyInformation};
 use yew::prelude::*;
 use yewlma::elements::TagProps;
 use yewlma::prelude::*;
@@ -109,14 +109,7 @@ impl Component for TagPage {
                     </DemoContainer>
                  </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<TagProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<TagProps> />
             </Container>
         }
     }

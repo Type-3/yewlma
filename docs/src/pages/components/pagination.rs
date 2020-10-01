@@ -1,7 +1,8 @@
-use crate::components::{DemoContainer, PropsTable};
 use yew::prelude::*;
-use yewlma::components::PaginationProps;
 use yewlma::prelude::*;
+use yewlma::components::PaginationProps;
+
+use crate::components::{DemoContainer, PropertyInformation};
 
 pub struct PaginationPage {
     link: ComponentLink<Self>,
@@ -68,14 +69,7 @@ impl Component for PaginationPage {
                     </DemoContainer>
                  </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<PaginationProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<PaginationProps> />
             </Container>
         }
     }

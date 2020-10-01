@@ -1,4 +1,4 @@
-use crate::components::{DemoContainer, PropsTable};
+use crate::components::{DemoContainer, PropertyInformation};
 use yew::prelude::*;
 use yewlma::forms::CheckBoxFieldProps;
 use yewlma::prelude::*;
@@ -37,14 +37,7 @@ impl Component for CheckBoxPage {
                     </DemoContainer>
                  </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<CheckBoxFieldProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<CheckBoxFieldProps> />
             </Container>
         }
     }

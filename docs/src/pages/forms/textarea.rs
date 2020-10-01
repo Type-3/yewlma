@@ -1,4 +1,4 @@
-use crate::components::{DemoContainer, PropsTable};
+use crate::components::{DemoContainer, PropertyInformation};
 use yew::prelude::*;
 use yewlma::forms::TextAreaFieldProps;
 use yewlma::prelude::*;
@@ -111,14 +111,7 @@ impl Component for TextAreaPage {
                     </DemoContainer>
                  </Column>
               </Columns>
-              <Columns>
-              <Column>
-                 <h1 class="title">{"Properties"}</h1>
-                 <DemoContainer>
-                     <PropsTable<TextAreaFieldProps> />
-                 </DemoContainer>
-               </Column>
-              </Columns>
+              <PropertyInformation<TextAreaFieldProps> />
             </Container>
         }
     }
