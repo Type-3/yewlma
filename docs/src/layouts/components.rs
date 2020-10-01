@@ -1,4 +1,4 @@
-use crate::pages::{BreadCrumbsPage, ComponentsIndex, DropDownPage, PaginationPage};
+use crate::pages::{BreadCrumbsPage, ComponentsIndex, TabsPage, DropDownPage, PaginationPage};
 use crate::routes::*;
 use yew::prelude::*;
 use yew_router::components::RouterAnchor;
@@ -42,6 +42,7 @@ impl Component for ComponentsLayout {
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::BreadCrumbs))>{"BreadCrumbs"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::DropDown))>{"DropDowns"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::Pagination))>{"Pagination"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::Tabs))>{"Tabs"}</RouterAnchor<AppRoutes>></li>
               </ul>
             </aside>
             </Column>
@@ -55,6 +56,7 @@ impl Component for ComponentsLayout {
             {
                 match self.props.route {
                     ComponentsRoutes::Index => html! {<ComponentsIndex />},
+                    ComponentsRoutes::Tabs => html! {<TabsPage />},
                     ComponentsRoutes::DropDown => html! { <DropDownPage /> },
                     ComponentsRoutes::BreadCrumbs => html! { <BreadCrumbsPage /> },
                     ComponentsRoutes::Pagination => html! { <PaginationPage /> }

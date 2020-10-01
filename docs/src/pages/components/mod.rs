@@ -1,5 +1,6 @@
 use crate::routes::*;
 use yew::prelude::*;
+use yewlma::prelude::*;
 use yew_router::prelude::*;
 
 mod dropdown;
@@ -8,6 +9,8 @@ mod breadcrumbs;
 pub use self::breadcrumbs::BreadCrumbsPage;
 mod pagination;
 pub use self::pagination::PaginationPage;
+mod tabs;
+pub use self::tabs::TabsPage;
 
 pub struct ComponentsIndex;
 

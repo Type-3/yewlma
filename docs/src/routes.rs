@@ -39,6 +39,9 @@ pub enum ComponentsRoutes {
     #[to = "/pagination"]
     #[breadcrumb("Pagination")]
     Pagination,
+    #[to = "/tabs"]
+    #[breadcrumb("Tabs")]
+    Tabs,
     #[to = "/"]
     Index,
 }

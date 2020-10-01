@@ -1,6 +1,9 @@
 mod dropdown;
 pub use self::dropdown::{DropDownItem, DropDownMenu, DropDownMenuProps};
 
+mod tabs;
+pub use self::tabs::{Tabs, TabsProps};
+
 #[cfg(feature = "paginator")]
 mod pagination;
 #[cfg(feature = "paginator")]

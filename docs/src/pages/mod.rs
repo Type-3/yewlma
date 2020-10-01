@@ -8,7 +8,7 @@ pub use self::elements::{
 };
 
 mod components;
-pub use self::components::{BreadCrumbsPage, ComponentsIndex, DropDownPage, PaginationPage};
+pub use self::components::{TabsPage, BreadCrumbsPage, ComponentsIndex, DropDownPage, PaginationPage};
 
 mod forms;
 pub use self::forms::{CheckBoxPage, FormsIndex, InputPage, TextAreaPage};
