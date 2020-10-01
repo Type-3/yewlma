@@ -1,21 +1,21 @@
-use yewlma::prelude::*;
+use crate::components::{DemoContainer, PropsTable};
 use yew::prelude::*;
 use yewlma::elements::TagProps;
-use crate::components::{DemoContainer, PropsTable};
+use yewlma::prelude::*;
 
 pub struct TagPage {
     link: ComponentLink<Self>,
     demo_color: Option<Color>,
     demo_size: Option<Size>,
     demo_light: bool,
-    demo_round: bool
+    demo_round: bool,
 }
 
 pub enum Msg {
     ColorChanged(DropDownItem),
     SizeChanged(DropDownItem),
     ToggleLight(bool),
-    ToggleRound(bool)
+    ToggleRound(bool),
 }
 
 impl Component for TagPage {
@@ -28,7 +28,7 @@ impl Component for TagPage {
             demo_color: None,
             demo_light: false,
             demo_round: false,
-            demo_size: None
+            demo_size: None,
         }
     }
 

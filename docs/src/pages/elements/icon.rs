@@ -1,6 +1,6 @@
 use yew::prelude::*;
-use yewlma::prelude::*;
 use yewlma::elements::IconProps;
+use yewlma::prelude::*;
 
 use crate::components::{DemoContainer, PropsTable};
 
@@ -26,7 +26,7 @@ impl Component for IconsPage {
             link,
             demo_color: None,
             demo_size: None,
-            demo_name: "fa fa-sun-o".into()
+            demo_name: "fa fa-sun-o".into(),
         }
     }
 
@@ -64,7 +64,7 @@ impl Component for IconsPage {
             },
             Msg::NameChanged(name) => {
                 self.demo_name = name;
-            },
+            }
         }
         true
     }
@@ -79,6 +79,7 @@ impl Component for IconsPage {
                     <Column>
                       <Columns class="is-vcentered">
                       <Column>
+                          <h3>{"Icon"}</h3>
                           <InputField value=self.demo_name.clone() onchange=self.link.callback(Msg::NameChanged) />
                       </Column>
                         <Column narrow=Narrow(None)>
@@ -124,7 +125,7 @@ impl IconsPage {
         }
         if self.demo_size.is_some() {
             attrs.push(("size", format!("Size::{}", self.demo_size.unwrap())));
-       }
+        }
         let mut output = format!("<Icon");
         for attr in attrs {
             output += &format!(" {}={}", attr.0, attr.1);

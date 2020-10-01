@@ -1,4 +1,6 @@
+use crate::routes::*;
 use yew::prelude::*;
+use yew_router::prelude::*;
 
 mod dropdown;
 pub use self::dropdown::DropDownPage;
@@ -27,7 +29,14 @@ impl Component for ComponentsIndex {
 
     fn view(&self) -> Html {
         html! {
-            <p>{"Components Index Page"}</p>
+            <Container>
+            <span class="title">{"TODO: Make index page"}</span>
+            <ul>
+                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::BreadCrumbs))>{"BreadCrumbs"}</RouterAnchor<AppRoutes>></li>
+                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::DropDown))>{"DropDown"}</RouterAnchor<AppRoutes>></li>
+                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::Pagination))>{"Pagination"}</RouterAnchor<AppRoutes>></li>
+            </ul>
+            </Container>
         }
     }
 }

@@ -1,7 +1,7 @@
-use yewlma::prelude::*;
-use yew::prelude::*;
 use crate::components::{DemoContainer, PropsTable};
 use crate::routes::AppRoutes;
+use yew::prelude::*;
+use yewlma::prelude::*;
 
 pub struct ButtonPage {
     link: ComponentLink<Self>,

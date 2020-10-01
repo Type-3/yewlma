@@ -1,21 +1,21 @@
-use crate::pages::{CheckBoxPage, FormsIndex, InputPage, TextAreaPage};
+use crate::pages::{ColumnPage, ColumnsPage, ContainerPage, LayoutsIndex};
 use crate::routes::*;
 use yew::prelude::*;
 use yew_router::components::RouterAnchor;
 use yewlma::prelude::*;
 use yewtil::NeqAssign;
 
-pub struct FormsLayout {
+pub struct LayoutsLayout {
     props: Props,
     _link: ComponentLink<Self>,
 }
 
 #[derive(Debug, PartialEq, Clone, Properties)]
 pub struct Props {
-    pub route: FormsRoutes,
+    pub route: LayoutRoutes,
 }
 
-impl Component for FormsLayout {
+impl Component for LayoutsLayout {
     type Message = ();
     type Properties = Props;
 
@@ -37,11 +37,11 @@ impl Component for FormsLayout {
             <Columns>
             <Column narrow=Narrow(None)>
             <aside class="menu mt-3">
-              <p class="menu-label">{"Forms"}</p>
+              <p class="menu-label">{"Components"}</p>
               <ul class="menu-list">
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::Input))>{"Input"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::TextArea))>{"TextArea"}</RouterAnchor<AppRoutes>></li>
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::CheckBox))>{"CheckBox"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Container))>{"Container"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Columns))>{"Columns"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Column))>{"Column"}</RouterAnchor<AppRoutes>></li>
               </ul>
             </aside>
             </Column>
@@ -54,10 +54,10 @@ impl Component for FormsLayout {
             <Column>
             {
                 match self.props.route {
-                    FormsRoutes::Index => html! {<FormsIndex />},
-                    FormsRoutes::Input => html! { <InputPage /> },
-                    FormsRoutes::TextArea => html !{ <TextAreaPage /> },
-                    FormsRoutes::CheckBox => html! { <CheckBoxPage /> }
+                    LayoutRoutes::Index => html! {<LayoutsIndex />},
+                    LayoutRoutes::Container => html! { <ContainerPage /> },
+                    LayoutRoutes::Columns => html! { <ColumnsPage /> },
+                    LayoutRoutes::Column => html! { <ColumnPage /> }
                 }
             }
             </Column>

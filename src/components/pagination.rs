@@ -1,8 +1,8 @@
 use crate::prelude::*;
 use paginator::{PageItem, Paginator};
 use yew::prelude::*;
-use yewtil::NeqAssign;
 use yew_property_info::PropertyInfo;
+use yewtil::NeqAssign;
 
 pub struct Pagination {
     paginator: Paginator,

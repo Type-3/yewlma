@@ -1,19 +1,19 @@
-use yewlma::prelude::*;
+use crate::components::{DemoContainer, PropsTable};
 use yew::prelude::*;
 use yewlma::elements::NotificationProps;
-use crate::components::{DemoContainer, PropsTable};
+use yewlma::prelude::*;
 
 pub struct NotificationPage {
     link: ComponentLink<Self>,
     demo_color: Option<Color>,
     demo_light: bool,
-    demo_delete: bool
+    demo_delete: bool,
 }
 
 pub enum Msg {
     ColorChanged(DropDownItem),
     ToggleLight(bool),
-    ToggleDelete(bool)
+    ToggleDelete(bool),
 }
 
 impl Component for NotificationPage {
@@ -25,7 +25,7 @@ impl Component for NotificationPage {
             link,
             demo_color: None,
             demo_light: false,
-            demo_delete: false
+            demo_delete: false,
         }
     }
 

@@ -1,7 +1,7 @@
-use yewlma::prelude::*;
-use yewlma::elements::ButtonsProps;
-use yew::prelude::*;
 use crate::components::{DemoContainer, PropsTable};
+use yew::prelude::*;
+use yewlma::elements::ButtonsProps;
+use yewlma::prelude::*;
 
 pub struct ButtonsPage {
     link: ComponentLink<Self>,

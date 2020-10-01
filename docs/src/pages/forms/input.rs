@@ -1,7 +1,7 @@
-use yew::prelude::*;
-use yewlma::prelude::*;
-use yewlma::forms::InputFieldProps;
 use crate::components::{DemoContainer, PropsTable};
+use yew::prelude::*;
+use yewlma::forms::InputFieldProps;
+use yewlma::prelude::*;
 
 pub struct InputPage {
     link: ComponentLink<Self>,

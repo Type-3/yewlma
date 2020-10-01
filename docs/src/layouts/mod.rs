@@ -9,3 +9,6 @@ pub use self::forms::FormsLayout;
 
 mod documentation;
 pub use self::documentation::DocumentationLayout;
+
+mod layout;
+pub use self::layout::LayoutsLayout;

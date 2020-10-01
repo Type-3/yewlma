@@ -1,7 +1,7 @@
-use yewlma::prelude::*;
-use yewlma::elements::TagsProps;
-use yew::prelude::*;
 use crate::components::{DemoContainer, PropsTable};
+use yew::prelude::*;
+use yewlma::elements::TagsProps;
+use yewlma::prelude::*;
 
 pub struct TagsPage {
     link: ComponentLink<Self>,
@@ -40,10 +40,8 @@ impl Component for TagsPage {
               <Columns>
                  <Column>
                     <DemoContainer>
-                    <Column class="is-vcentered">
-                    <Column class="py-3 px-2">
-                        <Column><CheckBoxField value=self.demo_addons label="addons" on_toggle=self.link.callback(Msg::ToggleAddons)/></Column>
-                    </Column>
+                    <Columns class="is-vcentered">
+                    <Column><CheckBoxField value=self.demo_addons label="addons" on_toggle=self.link.callback(Msg::ToggleAddons)/></Column>
                     <Column style="text-align:center">
                     <div class="box">
                        <Tags addons=self.demo_addons>
@@ -52,7 +50,7 @@ impl Component for TagsPage {
                       </Tags>
                     </div>
                     </Column>
-                    </Column>
+                    </Columns>
                     </DemoContainer>
                  </Column>
               </Columns>

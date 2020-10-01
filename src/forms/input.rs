@@ -1,7 +1,7 @@
 use crate::prelude::*;
 use yew::prelude::*;
-use yewtil::NeqAssign;
 use yew_property_info::PropertyInfo;
+use yewtil::NeqAssign;
 
 pub enum Msg {
     Changed(ChangeData),

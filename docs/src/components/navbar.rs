@@ -1,10 +1,10 @@
 use yew::prelude::*;
-use yewlma::prelude::*;
 use yew_router::components::RouterAnchor;
+use yewlma::prelude::*;
 
 use crate::routes::*;
 
-pub struct DemoNavBar ;
+pub struct DemoNavBar;
 
 impl Component for DemoNavBar {
     type Message = ();
@@ -36,6 +36,9 @@ impl Component for DemoNavBar {
                 </div>
                 <div id="navbarMenuHeroA" class="navbar-menu">
                   <div class="navbar-end">
+                  <RouterAnchor<AppRoutes> classes="navbar-item is-active" route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Index))>
+                    {"Layout"}
+                  </RouterAnchor<AppRoutes>>
                     <RouterAnchor<AppRoutes> classes="navbar-item is-active" route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Index))>
                       {"Elements"}
                     </RouterAnchor<AppRoutes>>

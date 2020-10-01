@@ -1,8 +1,8 @@
 use yew::prelude::*;
+use yew_property_info::PropertyInfo;
 use yew_router::agent::RouteRequest;
 use yew_router::prelude::*;
 use yew_router::Switch;
-use yew_property_info::PropertyInfo;
 
 use crate::classes::{Color, CssRepr, Size};
 use crate::utils::{NullSwitchImplementor, SwitchImplementor};

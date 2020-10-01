@@ -1,4 +1,6 @@
+use crate::routes::*;
 use yew::prelude::*;
+use yew_router::prelude::*;
 
 mod input;
 pub use self::input::InputPage;
@@ -27,7 +29,14 @@ impl Component for FormsIndex {
 
     fn view(&self) -> Html {
         html! {
-            <p>{"Forms Index Page"}</p>
+            <div>
+            <span class="title">{"TODO: Make index page"}</span>
+            <ul>
+                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::Input))>{"Input"}</RouterAnchor<AppRoutes>></li>
+                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::TextArea))>{"TextArea"}</RouterAnchor<AppRoutes>></li>
+                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::CheckBox))>{"CheckBox"}</RouterAnchor<AppRoutes>></li>
+            </ul>
+            </div>
         }
     }
 }

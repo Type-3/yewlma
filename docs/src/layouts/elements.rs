@@ -1,19 +1,22 @@
-use yew::prelude::*;
-use yewlma::prelude::*;
-use yew_router::components::RouterAnchor;
-use yewtil::NeqAssign;
-use crate::pages::{ButtonPage, NotificationPage, TagsPage, ButtonsPage, TagPage, IconsPage, DeletePage, ElementsIndex};
+use crate::pages::{
+    ButtonPage, ButtonsPage, DeletePage, ElementsIndex, IconsPage, NotificationPage, TagPage,
+    TagsPage,
+};
 use crate::routes::ElementsRoutes;
 use crate::routes::*;
+use yew::prelude::*;
+use yew_router::components::RouterAnchor;
+use yewlma::prelude::*;
+use yewtil::NeqAssign;
 
 pub struct ElementsLayout {
     props: Props,
-    _link: ComponentLink<Self>
+    _link: ComponentLink<Self>,
 }
 
 #[derive(Debug, PartialEq, Clone, Properties)]
 pub struct Props {
-    pub route: ElementsRoutes
+    pub route: ElementsRoutes,
 }
 
 impl Component for ElementsLayout {
@@ -42,6 +45,7 @@ impl Component for ElementsLayout {
               <ul class="menu-list">
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Button))>{"Button"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Buttons))>{"Buttons"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Icons))>{"Icon"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Tag))>{"Tag"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Tags))>{"Tags"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Icons))>{"Icons"}</RouterAnchor<AppRoutes>></li>

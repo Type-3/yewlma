@@ -1,7 +1,7 @@
-use yewlma::prelude::*;
+use crate::components::{DemoContainer, PropsTable};
 use yew::prelude::*;
 use yewlma::components::DropDownMenuProps;
-use crate::components::{DemoContainer, PropsTable};
+use yewlma::prelude::*;
 
 pub struct DropDownPage {
     link: ComponentLink<Self>,
@@ -74,7 +74,7 @@ impl Component for DropDownPage {
                     <DemoContainer>
                     <Columns class="is-vcentered">
                     <Column>
-                      <Columns>
+                      <Columns class="is-vcentered">
                         <Column>
                           <h3>{"Color"}</h3>
                           <DropDownMenu items=color_dropdown_items() placeholder="Color" onchange=self.link.callback(Msg::ColorChanged) />

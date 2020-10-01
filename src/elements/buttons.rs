@@ -1,6 +1,6 @@
 use yew::prelude::*;
-use yewtil::{Pure, PureComponent};
 use yew_property_info::PropertyInfo;
+use yewtil::{Pure, PureComponent};
 
 pub type Buttons = Pure<ButtonsProps>;
 

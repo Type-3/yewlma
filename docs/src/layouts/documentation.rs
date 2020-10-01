@@ -2,15 +2,15 @@ use yew::prelude::*;
 use yewlma::prelude::*;
 use yewtil::NeqAssign;
 
-use crate::routes::*;
-use crate::layouts::*;
 use crate::components::DemoNavBar;
+use crate::layouts::*;
+use crate::routes::*;
 
 pub struct DocumentationLayout(Props, ComponentLink<Self>);
 
 #[derive(Debug, PartialEq, Clone, Properties)]
 pub struct Props {
-    pub route: DocsRoutes
+    pub route: DocsRoutes,
 }
 
 impl Component for DocumentationLayout {
@@ -37,6 +37,7 @@ impl Component for DocumentationLayout {
             <Container>
                 {
                     match self.0.route.clone() {
+                            DocsRoutes::Layout(route) => html! { <LayoutsLayout route=route /> },
                             DocsRoutes::Components(route) => html! { <ComponentsLayout route=route /> },
                             DocsRoutes::Elements(route) => html ! { <ElementsLayout route=route /> },
                             DocsRoutes::Forms(route) => html! { <FormsLayout route=route  /> }

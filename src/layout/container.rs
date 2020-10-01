@@ -1,12 +1,13 @@
 use yew::prelude::*;
+use yew_property_info::PropertyInfo;
 use yewtil::{Pure, PureComponent};
 
 use crate::classes::{BreakPoint, Color, CssRepr};
 
-pub type Container = Pure<PureContainer>;
+pub type Container = Pure<ContainerProps>;
 
-#[derive(Debug, PartialEq, Clone, Properties)]
-pub struct PureContainer {
+#[derive(Debug, PartialEq, Clone, Properties, PropertyInfo)]
+pub struct ContainerProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
@@ -25,7 +26,7 @@ pub struct PureContainer {
     pub children: Children,
 }
 
-impl PureComponent for PureContainer {
+impl PureComponent for ContainerProps {
     fn render(&self) -> Html {
         let breakpoint = self.breakpoint.is();
         let fluid = self.fluid.then_some("is-fluid");

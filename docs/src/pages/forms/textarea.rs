@@ -1,7 +1,7 @@
-use yew::prelude::*;
-use yewlma::prelude::*;
-use yewlma::forms::TextAreaFieldProps;
 use crate::components::{DemoContainer, PropsTable};
+use yew::prelude::*;
+use yewlma::forms::TextAreaFieldProps;
+use yewlma::prelude::*;
 
 pub struct TextAreaPage {
     link: ComponentLink<Self>,

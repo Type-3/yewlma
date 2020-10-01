@@ -1,12 +1,13 @@
 use yew::prelude::*;
+use yew_property_info::PropertyInfo;
 use yewtil::{Pure, PureComponent};
 
 use crate::classes::{BreakPoint, CssRepr};
 
-pub type Columns = Pure<PureColumns>;
+pub type Columns = Pure<ColumnsProps>;
 
-#[derive(Debug, PartialEq, Clone, Properties)]
-pub struct PureColumns {
+#[derive(Debug, PartialEq, Clone, Properties, PropertyInfo)]
+pub struct ColumnsProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or("div")]
@@ -21,7 +22,7 @@ pub struct PureColumns {
     pub children: Children,
 }
 
-impl PureComponent for PureColumns {
+impl PureComponent for ColumnsProps {
     fn render(&self) -> Html {
         let breakpoint = self.breakpoint.is();
         let gapless = self.gapless.then_some("is-gapless");

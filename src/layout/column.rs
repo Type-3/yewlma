@@ -1,12 +1,13 @@
 use yew::prelude::*;
+use yew_property_info::PropertyInfo;
 use yewtil::{Pure, PureComponent};
 
 use crate::classes::{ColSize, CssRepr, Narrow};
 
-pub type Column = Pure<PureColumn>;
+pub type Column = Pure<ColumnProps>;
 
-#[derive(Debug, PartialEq, Clone, Properties)]
-pub struct PureColumn {
+#[derive(Debug, PartialEq, Clone, Properties, PropertyInfo)]
+pub struct ColumnProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or("div")]
@@ -25,7 +26,7 @@ pub struct PureColumn {
     pub children: Children,
 }
 
-impl PureComponent for PureColumn {
+impl PureComponent for ColumnProps {
     fn render(&self) -> Html {
         let size = self.size.is();
         let narrow = self.narrow.is();

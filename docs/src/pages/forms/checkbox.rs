@@ -1,7 +1,7 @@
-use yew::prelude::*;
-use yewlma::prelude::*;
-use yewlma::forms::CheckBoxFieldProps;
 use crate::components::{DemoContainer, PropsTable};
+use yew::prelude::*;
+use yewlma::forms::CheckBoxFieldProps;
+use yewlma::prelude::*;
 
 pub struct CheckBoxPage;
 

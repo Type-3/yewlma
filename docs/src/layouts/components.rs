@@ -1,18 +1,18 @@
-use yew::prelude::*;
-use yewtil::NeqAssign;
-use yewlma::prelude::*;
-use yew_router::components::RouterAnchor;
-use crate::pages::{DropDownPage, ComponentsIndex, BreadCrumbsPage, PaginationPage};
+use crate::pages::{BreadCrumbsPage, ComponentsIndex, DropDownPage, PaginationPage};
 use crate::routes::*;
+use yew::prelude::*;
+use yew_router::components::RouterAnchor;
+use yewlma::prelude::*;
+use yewtil::NeqAssign;
 
 pub struct ComponentsLayout {
     props: Props,
-    _link: ComponentLink<Self>
+    _link: ComponentLink<Self>,
 }
 
 #[derive(Debug, PartialEq, Clone, Properties)]
 pub struct Props {
-    pub route: ComponentsRoutes
+    pub route: ComponentsRoutes,
 }
 
 impl Component for ComponentsLayout {
@@ -39,8 +39,8 @@ impl Component for ComponentsLayout {
             <aside class="menu mt-3">
               <p class="menu-label">{"Components"}</p>
               <ul class="menu-list">
-                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::DropDown))>{"DropDowns"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::BreadCrumbs))>{"BreadCrumbs"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::DropDown))>{"DropDowns"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Components(ComponentsRoutes::Pagination))>{"Pagination"}</RouterAnchor<AppRoutes>></li>
               </ul>
             </aside>

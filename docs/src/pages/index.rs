@@ -1,7 +1,7 @@
-use yew::prelude::*;
-use yewlma::prelude::*;
-use yew_router::components::RouterAnchor;
 use crate::routes::*;
+use yew::prelude::*;
+use yew_router::components::RouterAnchor;
+use yewlma::prelude::*;
 pub struct IndexPage;
 
 impl Component for IndexPage {
@@ -36,6 +36,9 @@ impl Component for IndexPage {
                     </div>
                     <div id="navbarMenuHeroA" class="navbar-menu">
                       <div class="navbar-end">
+                      <RouterAnchor<AppRoutes> classes="navbar-item is-active" route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Index))>
+                        {"Layout"}
+                      </RouterAnchor<AppRoutes>>
                         <RouterAnchor<AppRoutes> classes="navbar-item is-active" route=AppRoutes::Docs(DocsRoutes::Elements(ElementsRoutes::Index))>
                           {"Elements"}
                         </RouterAnchor<AppRoutes>>

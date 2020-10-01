@@ -1,6 +1,6 @@
+use crate::layouts::*;
 use crate::pages::*;
 use crate::routes::*;
-use crate::layouts::*;
 use yew::prelude::*;
 use yew_router::prelude::*;
 

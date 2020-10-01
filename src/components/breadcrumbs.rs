@@ -1,10 +1,10 @@
+use crate::classes::{CssRepr, Size};
 use yew::prelude::*;
-use crate::classes::{Size, CssRepr};
+use yew_property_info::PropertyInfo;
 use yew_route_breadcrumbs::Crumb;
 use yew_router::agent::RouteRequest;
 use yew_router::prelude::*;
 use yewtil::NeqAssign;
-use yew_property_info::PropertyInfo;
 
 pub struct BreadCrumbs {
     link: ComponentLink<Self>,
@@ -17,7 +17,7 @@ pub struct Clicked(Option<&'static str>);
 pub struct BreadCrumbsProps {
     pub crumbs: Option<Vec<Crumb>>,
     #[prop_or_default]
-    pub size: Option<Size>
+    pub size: Option<Size>,
 }
 
 impl Component for BreadCrumbs {
