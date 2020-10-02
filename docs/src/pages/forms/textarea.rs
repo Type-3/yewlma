@@ -7,7 +7,6 @@ pub struct TextAreaPage {
     link: ComponentLink<Self>,
     demo_color: Option<Color>,
     demo_size: Option<Size>,
-    demo_round: bool,
     demo_disabled: bool,
     demo_loading: bool,
 }
@@ -15,7 +14,6 @@ pub struct TextAreaPage {
 pub enum Msg {
     ColorChanged(DropDownItem),
     SizeChanged(DropDownItem),
-    ToggleRound(bool),
     ToggleDisabled(bool),
     ToggleLoading(bool),
 }
@@ -28,7 +26,6 @@ impl Component for TextAreaPage {
         TextAreaPage {
             link,
             demo_color: None,
-            demo_round: false,
             demo_disabled: false,
             demo_size: None,
             demo_loading: false,
@@ -41,7 +38,6 @@ impl Component for TextAreaPage {
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::ToggleRound(value) => self.demo_round = value,
             Msg::ToggleDisabled(value) => self.demo_disabled = value,
             Msg::ToggleLoading(value) => self.demo_loading = value,
             Msg::SizeChanged(size) => match size {
@@ -93,7 +89,6 @@ impl Component for TextAreaPage {
                         </Column>
                       </Columns>
                     <Columns class="py-3 px-2">
-                        <Column><CheckBoxField value=self.demo_round label="round" on_toggle=self.link.callback(Msg::ToggleRound)/></Column>
                         <Column><CheckBoxField value=self.demo_disabled label="disabled" on_toggle=self.link.callback(Msg::ToggleDisabled)/></Column>
                         <Column><CheckBoxField value=self.demo_loading label="loading" on_toggle=self.link.callback(Msg::ToggleLoading)/></Column>
                     </Columns>
@@ -101,7 +96,6 @@ impl Component for TextAreaPage {
                     <Column style="text-align:center">
                     <div class="box">
                     <TextAreaField color=self.demo_color
-                        rounded=self.demo_round
                         size=self.demo_size
                         loading=self.demo_loading
                         disabled=self.demo_disabled/>

@@ -14,4 +14,4 @@ mod forms;
 pub use self::forms::{CheckBoxPage, FormsIndex, InputPage, TextAreaPage};
 
 mod layout;
-pub use self::layout::{ColumnPage, ColumnsPage, ContainerPage, LayoutsIndex};
+pub use self::layout::{ColumnPage, FooterPage, HeroPage, ColumnsPage, ContainerPage, LayoutsIndex};

@@ -1,4 +1,4 @@
-use crate::pages::{ColumnPage, ColumnsPage, ContainerPage, LayoutsIndex};
+use crate::pages::{ColumnPage, ColumnsPage, HeroPage, FooterPage, ContainerPage, LayoutsIndex};
 use crate::routes::*;
 use yew::prelude::*;
 use yew_router::components::RouterAnchor;
@@ -42,13 +42,15 @@ impl Component for LayoutsLayout {
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Container))>{"Container"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Columns))>{"Columns"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Column))>{"Column"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Hero))>{"Hero"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Layout(LayoutRoutes::Footer))>{"Footer"}</RouterAnchor<AppRoutes>></li>
               </ul>
             </aside>
             </Column>
             <Column>
             <Container class="mt-2">
             <Columns>
-            <Column><BreadCrumbs crumbs=self.props.route.breadcrumbs() size=Size::Medium /></Column>
+                <Column><BreadCrumbs crumbs=self.props.route.breadcrumbs() size=Size::Medium /></Column>
             </Columns>
             <Columns>
             <Column>
@@ -57,7 +59,9 @@ impl Component for LayoutsLayout {
                     LayoutRoutes::Index => html! {<LayoutsIndex />},
                     LayoutRoutes::Container => html! { <ContainerPage /> },
                     LayoutRoutes::Columns => html! { <ColumnsPage /> },
-                    LayoutRoutes::Column => html! { <ColumnPage /> }
+                    LayoutRoutes::Column => html! { <ColumnPage /> },
+                    LayoutRoutes::Footer => html! { <FooterPage /> },
+                    LayoutRoutes::Hero => html! {<HeroPage />}
                 }
             }
             </Column>

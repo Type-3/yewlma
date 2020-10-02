@@ -58,6 +58,12 @@ pub enum LayoutRoutes {
     #[to = "/column"]
     #[breadcrumb("Column")]
     Column,
+    #[to = "/footer"]
+    #[breadcrumb("Footer")]
+    Footer,
+    #[to = "/hero"]
+    #[breadcrumb("Hero")]
+    Hero,
     #[to = "/"]
     Index,
 }

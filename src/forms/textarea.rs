@@ -35,8 +35,6 @@ pub struct TextAreaFieldProps {
     #[prop_or_default]
     pub loading: bool,
     #[prop_or_default]
-    pub rounded: bool,
-    #[prop_or_default]
     pub onchange: Callback<String>,
     #[prop_or_default]
     pub label: Option<String>,
@@ -65,7 +63,6 @@ impl Component for TextAreaField {
         let size = self.props.size.is();
         let mut color = self.props.color.is();
         let loading = self.props.loading.then_some("is-loading");
-        let round = self.props.rounded.then_some("is-rounded");
         let label = self
             .props
             .label
@@ -98,7 +95,7 @@ impl Component for TextAreaField {
                        placeholder?=self.props.placeholder.as_ref()
                        onchange=self.link.callback(Msg::Changed)
                        disabled=self.props.disabled
-                       class=("textarea", color, round, size, &self.props.class)/>
+                       class=("textarea", color, size, &self.props.class)/>
               </div>
             </div>
         }

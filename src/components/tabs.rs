@@ -67,7 +67,9 @@ impl Component for Tabs {
                 <ul>
                     {
                         for self.props.titles.iter().enumerate().map(|(dex, item)| {
-                            html! { <li><a onclick=self.link.callback(move |_|Msg::Selected(dex))>{item}</a></li> }
+                            let active = (dex == self.index).then_some("is-active");
+                            yew::services::ConsoleService::error(&format!("dex: {}, index: {}, item: {:?}, active: {:?}", dex, self.index, item, active));
+                            html! { <li class=active><a onclick=self.link.callback(move |_|Msg::Selected(dex))>{item}</a></li> }
                         })
                     }
                 </ul>
