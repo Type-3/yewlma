@@ -11,4 +11,4 @@ mod footer;
 pub use self::footer::{Footer, FooterProps};
 
 mod hero;
-pub use self::hero::{Hero, HeroProps};
+pub use self::hero::{Hero, HeroProps, HeroHead, HeroHeadProps, HeroFoot, HeroFootProps};

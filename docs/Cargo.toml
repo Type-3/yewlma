@@ -9,9 +9,9 @@ crate-type = ["cdylib"]
 
 [dependencies]
 wasm-bindgen = "^0.2"
-yewlma = { path = "../" }
+yewlma = { path = "../", features = ["full"] }
 yew-route-breadcrumbs = "0.1.2"
 yew-property-info = { git = "https://github.com/Type-3/yew-property-info" }
-yew = { git = "https://github.com/yewstack/yew" }
-yewtil = { git = "https://github.com/yewstack/yew" }
-yew-router = { git = "https://github.com/yewstack/yew" }
+yew = { path = "../../yew/yew" }
+yewtil = { path = "../../yew/yewtil" }
+yew-router = { path = "../../yew/yew-router" }
