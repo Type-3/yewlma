@@ -10,8 +10,8 @@ members = [
 ]
 
 [features]
-default = ["yew", "yewtil", "yew-router"]
-full = ["default", "paginator", "yew-route-breadcrumbs"]
+full = ["yew", "yewtil", "yew-router"]
+default = ["full", "paginator", "yew-route-breadcrumbs"]
 
 [dependencies]
 serde = "1.0.115"

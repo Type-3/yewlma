@@ -2,6 +2,7 @@ use crate::routes::*;
 use yew::prelude::*;
 use yew_router::components::RouterAnchor;
 use yewlma::prelude::*;
+
 pub struct IndexPage;
 
 impl Component for IndexPage {

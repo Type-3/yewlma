@@ -3,20 +3,18 @@
 #![feature(associated_type_bounds)]
 
 pub mod classes;
-#[cfg(feature = "full")]
+#[cfg(feature = "yew")]
 pub mod components;
-#[cfg(feature = "full")]
+#[cfg(feature = "yew")]
 pub mod elements;
-#[cfg(feature = "full")]
+#[cfg(feature = "yew")]
 pub mod forms;
-#[cfg(feature = "full")]
+#[cfg(feature = "yew")]
 pub mod layout;
-#[cfg(feature = "full")]
+#[cfg(feature = "yew")]
 pub mod toast;
-#[cfg(feature = "full")]
 pub mod utils;
 
-#[cfg(feature = "full")]
 pub mod prelude {
     pub use super::classes::*;
     pub use super::components::*;
