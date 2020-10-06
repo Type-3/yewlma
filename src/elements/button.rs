@@ -59,6 +59,9 @@ pub struct ButtonProps<SW: Switch + Clone + 'static = NullSwitchImplementor> {
     #[prop_description("Classes to apply to the root element")]
     pub class: Option<String>,
     #[prop_or_default]
+    #[prop_description("Css Style Elements")]
+    pub style: Option<String>,
+    #[prop_or_default]
     #[prop_description("Callback called when the button is clicked")]
     pub onsignal: Callback<()>,
     #[prop_or_default]
@@ -115,6 +118,7 @@ impl<SW: Switch + Clone + 'static, STATE: RouterState> Component for Button<SW, 
                  id?=self.props.id.as_ref()
                  disabled=self.props.disabled
                  onclick=self.link.callback(|_| Msg::Clicked)
+                 style?=self.props.style.as_ref()
                  class=(
                      "button", color, size, fg,
                      light, outlined, inverted, fullwidth,
