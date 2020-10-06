@@ -19,6 +19,6 @@ derive_more = "0.99.9"
 paginator = { optional = true, version = "0.2.0" }
 yew-property-info = { git = "https://github.com/Type-3/yew-property-info" }
 yew-route-breadcrumbs = { optional = true, version = "0.1.2" }
-yew = { optional = true, path = "../yew/yew" }
-yewtil = { optional = true, path = "../yew/yewtil", features = ["pure"] }
-yew-router = { optional = true, path = "../yew/yew-router" }
+yew = { optional = true, git = "https://github.com/yewstack/yew" }
+yewtil = { optional = true, git = "https://github.com/yewstack/yew", features = ["pure"] }
+yew-router = { optional = true, git = "https://github.com/yewstack/yew" }
