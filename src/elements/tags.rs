@@ -2,6 +2,8 @@ use yew::prelude::*;
 use yew_property_info::PropertyInfo;
 use yewtil::NeqAssign;
 
+use crate::classes::{Size, CssRepr};
+
 pub struct Tags {
     _link: ComponentLink<Self>,
     props: TagsProps,
@@ -11,6 +13,8 @@ pub struct Tags {
 pub struct TagsProps {
     #[prop_or("div")]
     pub tag: &'static str,
+    #[prop_or_default]
+    pub size: Option<Size>,
     #[prop_or_default]
     pub addons: bool,
     #[prop_or_default]
@@ -36,9 +40,10 @@ impl Component for Tags {
     }
 
     fn view(&self) -> Html {
+        let size = self.props.size.are();
         let addons = self.props.addons.then_some("has-addons");
         html! {
-            <@{self.props.tag} class=("tags", addons, self.props.class.clone())>{self.props.children.clone()}</@>
+            <@{self.props.tag} class=("tags", addons, size, self.props.class.clone())>{self.props.children.clone()}</@>
         }
     }
 }

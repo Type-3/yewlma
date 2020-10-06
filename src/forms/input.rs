@@ -5,6 +5,7 @@ use yewtil::NeqAssign;
 
 pub enum Msg {
     Changed(ChangeData),
+    Key(InputData)
 }
 
 pub struct InputField {
@@ -40,6 +41,8 @@ pub struct InputFieldProps {
     #[prop_or_default]
     pub onchange: Callback<String>,
     #[prop_or_default]
+    pub onkey: Callback<String>,
+    #[prop_or_default]
     pub label: Option<String>,
 }
 
@@ -62,9 +65,18 @@ impl Component for InputField {
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
-        if let Msg::Changed(ChangeData::Value(data)) = msg {
-            self.value = data.clone();
-            self.props.onchange.emit(data);
+        match msg {
+            Msg::Changed(ChangeData::Value(data)) => {
+                self.value = data.clone();
+                self.props.onchange.emit(data);
+            },
+            Msg::Changed(ChangeData::Files(_)) => {},
+            Msg::Changed(ChangeData::Select(_)) => {},
+            Msg::Key(data) => {
+                self.value.push_str(&data.value);
+                self.props.onkey.emit(self.value.clone());
+            }
+
         }
         false
     }
@@ -93,6 +105,7 @@ impl Component for InputField {
                        placeholder?=self.props.placeholder.as_ref()
                        type=&self.props.ty
                        onchange=self.link.callback(Msg::Changed)
+                       oninput=self.link.callback(Msg::Key)
                        value=self.value
                        disabled=self.props.disabled
                        class=("input", color, round, size, &self.props.class)/>

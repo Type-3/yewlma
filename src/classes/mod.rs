@@ -24,6 +24,10 @@ pub trait CssRepr {
         self.prefixed("is-")
     }
 
+    fn are(&self) -> String {
+        self.prefixed("are-")
+    }
+
     fn has_bg(&self) -> String {
         self.prefixed("has-background-")
     }
