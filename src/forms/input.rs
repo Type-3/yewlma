@@ -73,7 +73,7 @@ impl Component for InputField {
             Msg::Changed(ChangeData::Files(_)) => {},
             Msg::Changed(ChangeData::Select(_)) => {},
             Msg::Key(data) => {
-                self.value.push_str(&data.value);
+                self.value = data.value;
                 self.props.onkey.emit(self.value.clone());
             }
 
