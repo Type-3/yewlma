@@ -17,9 +17,14 @@ pub mod utils;
 
 pub mod prelude {
     pub use super::classes::*;
+    #[cfg(feature = "yew")]
     pub use super::components::*;
+    #[cfg(feature = "yew")]
     pub use super::elements::*;
+    #[cfg(feature = "yew")]
     pub use super::forms::*;
+    #[cfg(feature = "yew")]
     pub use super::layout::*;
+    #[cfg(feature = "yew")]
     pub use super::toast::*;
 }

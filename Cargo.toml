@@ -14,7 +14,7 @@ full = ["yew", "yewtil", "yew-router"]
 default = ["full", "paginator", "yew-route-breadcrumbs"]
 
 [dependencies]
-serde = "1.0.115"
+serde = { version = "1.0.115", features = ["derive"] }
 derive_more = "0.99.9"
 paginator = { optional = true, version = "0.2.0" }
 yew-property-info = { git = "https://github.com/Type-3/yew-property-info" }
