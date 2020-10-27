@@ -80,6 +80,9 @@ pub enum FormsRoutes {
     #[to = "/checkbox"]
     #[breadcrumb("CheckBox")]
     CheckBox,
+    #[to = "/file"]
+    #[breadcrumb("File")]
+    File,
     #[to = "/"]
     Index,
 }

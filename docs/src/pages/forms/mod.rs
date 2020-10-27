@@ -8,6 +8,8 @@ mod textarea;
 pub use self::textarea::TextAreaPage;
 mod checkbox;
 pub use self::checkbox::CheckBoxPage;
+mod file;
+pub use self::file::FilePage;
 
 pub struct FormsIndex;
 

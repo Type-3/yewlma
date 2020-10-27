@@ -1,4 +1,4 @@
-use crate::pages::{CheckBoxPage, FormsIndex, InputPage, TextAreaPage};
+use crate::pages::{CheckBoxPage, FormsIndex, InputPage, FilePage, TextAreaPage};
 use crate::routes::*;
 use yew::prelude::*;
 use yew_router::components::RouterAnchor;
@@ -42,6 +42,7 @@ impl Component for FormsLayout {
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::Input))>{"Input"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::TextArea))>{"TextArea"}</RouterAnchor<AppRoutes>></li>
                 <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::CheckBox))>{"CheckBox"}</RouterAnchor<AppRoutes>></li>
+                <li><RouterAnchor<AppRoutes> route=AppRoutes::Docs(DocsRoutes::Forms(FormsRoutes::File))>{"File"}</RouterAnchor<AppRoutes>></li>
               </ul>
             </aside>
             </Column>
@@ -54,10 +55,11 @@ impl Component for FormsLayout {
             <Column>
             {
                 match self.props.route {
-                    FormsRoutes::Index => html! {<FormsIndex />},
+                    FormsRoutes::Index => html! { <FormsIndex /> },
                     FormsRoutes::Input => html! { <InputPage /> },
-                    FormsRoutes::TextArea => html !{ <TextAreaPage /> },
-                    FormsRoutes::CheckBox => html! { <CheckBoxPage /> }
+                    FormsRoutes::TextArea => html! { <TextAreaPage /> },
+                    FormsRoutes::CheckBox => html! { <CheckBoxPage /> },
+                    FormsRoutes::File => html! { <FilePage /> }
                 }
             }
             </Column>
