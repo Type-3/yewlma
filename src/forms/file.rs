@@ -11,7 +11,9 @@ pub struct FileField {
 #[derive(Debug, PartialEq, Clone, Properties, PropertyInfo)]
 pub struct FileFieldProps {
     #[prop_or_default]
-    pub value: Option<String>
+    pub value: Option<String>,
+    #[prop_or_default]
+    pub onchange: Callback<String>
 }
 
 pub enum Msg {
@@ -23,20 +25,23 @@ impl Component for FileField {
     type Properties = FileFieldProps;
 
     fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        let value = props.value.unwrap_or_else(String::new);
+        let value = props.value.clone().unwrap_or_else(String::new);
         Self { props, link, value }
     }
 
     fn change(&mut self, props: Self::Properties) -> ShouldRender {
-        if let Some(value) = props.value {
-            self.value = value;
+        if let Some(ref value) = props.value {
+            self.value = value.clone();
         }
         self.props.neq_assign(props)
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::Changed(ChangeData::Files(file)) => self.value = format!("{}", file.get(0).unwrap().name()),
+            Msg::Changed(ChangeData::Files(file)) => {
+                self.value = format!("{}", file.get(0).unwrap().name());
+                self.props.onchange.emit(self.value.clone());
+            },
             _ => {}
         }
         true
